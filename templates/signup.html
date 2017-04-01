@@ -3,7 +3,7 @@
 {% block content %}
   <main class="container signup-section">
     <div class="section-content">
-      <h2>Create an account</h2>
+      <h2>Sign up Form</h2>
 
       <form method="POST" action="/signup">
         {{ form.hidden_tag() }}
@@ -54,6 +54,43 @@
           {% endif %}
 
           {{ form.password }}
+        </div>
+
+           <div class="form-group">
+          {{ form.address.label }}
+
+          {% if form.address.errors %}
+            {% for error in form.address.errors %}
+              <p class="error-message">{{ error }}</p>
+            {% endfor %}
+          {% endif %}
+
+          {{ form.address }}
+        </div>
+
+        <div class="form-group">
+          {{ form.zipcode.label }}
+
+          {% if form.zipcode.errors %}
+            {% for error in form.zipcode.errors %}
+              <p class="error-message">{{ error }}</p>
+            {% endfor %}
+          {% endif %}
+
+          {{ form.zipcode }}
+        </div>
+
+
+         <div class="form-group">
+          {{ form.volunteergroup.label }}
+
+          {% if form.volunteergroup.errors %}
+            {% for error in form.volunteergroup.errors %}
+              <p class="error-message">{{ error }}</p>
+            {% endfor %}
+          {% endif %}
+
+          {{ form.volunteergroup }}
         </div>
 
         {{ form.submit(class="btn-primary") }}
